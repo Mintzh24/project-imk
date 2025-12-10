@@ -1,0 +1,195 @@
+/* Menggunakan variabel yang diasumsikan dari style.css */
+:root {
+    --color-primary: #4A3A2A; 
+    --color-accent: #E8B949;  
+    --color-background: #FFFFFF;
+    --color-light-bg: #F5F5F5; 
+    --color-error: #ff4d4d;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+/* --- 1. HEADER & CONTAINER --- */
+.header-checkout {
+    /* Optional: Buat header checkout lebih minimalis */
+    border-bottom: 1px solid #eee;
+    padding: 1rem 5%;
+}
+
+.checkout-container {
+    padding: 3rem 5%;
+    background-color: var(--color-light-bg);
+}
+
+.checkout-title {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    margin-left: auto;
+}
+
+/* --- 2. GRID UTAMA --- */
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr; /* Form lebih lebar dari summary */
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.checkout-form h2, .order-summary h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-accent);
+}
+
+/* --- 3. FORM STYLE --- */
+.checkout-form section {
+    background-color: var(--color-background);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.form-group .required {
+    color: var(--color-error);
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--color-accent);
+    outline: none;
+}
+
+.form-group-half {
+    display: inline-block;
+    width: 48%; /* Untuk dua kolom */
+    margin-right: 2%;
+}
+
+/* --- 4. PAYMENT & NOTES --- */
+.payment-options {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-options label {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.payment-options input[type="radio"] {
+    margin-right: 10px;
+}
+
+.order-notes textarea {
+    min-height: 80px;
+}
+
+/* --- 5. ORDER SUMMARY --- */
+
+.order-summary {
+    position: sticky; /* Agar summary ikut bergerak saat scroll */
+    top: 20px;
+    background-color: var(--color-background);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.order-items-list {
+    min-height: 100px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.order-item-summary p {
+    margin: 0.4rem 0;
+}
+
+.summary-details {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.summary-details td {
+    padding: 0.4rem 0;
+}
+
+.summary-total td {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    border-top: 1px solid #ccc;
+    padding-top: 1rem;
+}
+
+.summary-total td:last-child {
+    color: var(--color-accent);
+}
+
+.checkout-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.checkout-button:hover:not(:disabled) {
+    background-color: #5d4a3b;
+}
+
+.checkout-button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+/* --- 6. MEDIA QUERIES (RESPONSIVE) --- */
+
+@media (max-width: 992px) {
+    .checkout-grid {
+        grid-template-columns: 1fr; /* Tumpuk form dan summary */
+        gap: 2rem;
+    }
+
+    .order-summary {
+        position: static; /* Hilangkan sticky di mobile */
+    }
+
+    .form-group-half {
+        width: 100%;
+        margin-right: 0;
+    }
+}

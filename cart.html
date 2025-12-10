@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Keranjang Belanja - Kopi Nusantara</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css"> </head>
+<body>
+    <header class="header">
+        <a href="#" class="logo-link">
+            <img src="assets/images/logo-kopi.png" alt="Logo Kopi Nusantara" class="logo-img">
+            <span class="logo-text">Kopi Nusantara</span>
+        </a>
+        
+        <nav class="nav-links">
+            <a href="index.html" class="active-nav-beranda">Beranda</a>
+            <a href="belanja.html" class="active-nav-belanja">Belanja Kopi</a>
+            <a href="about.html" class="active-nav-about">Tentang Kami</a>
+            <a href="contact.html" class="active-nav-contact">Kontak</a>
+        </nav>
+            
+            <i class="fas fa-user"></i>
+        </div>
+    </header>
+    <main class="cart-container">
+        <h1>Keranjang Belanja</h1>
+
+        <p id="empty-cart-message" style="display:none; text-align: center;">
+            Keranjang Anda kosong. Silakan kembali ke halaman Belanja.
+        </p>
+
+        <div class="cart-content-wrapper">
+            
+            <section class="cart-items">
+                <table id="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Produk</th>
+                            <th>Harga</th>
+                            <th>Jumlah</th>
+                            <th>Subtotal</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-body">
+                        </tbody>
+                </table>
+            </section>
+            
+            <section class="cart-summary">
+                <h2>Ringkasan Pesanan</h2>
+                <div class="summary-row">
+                    <span>Subtotal Produk</span>
+                    <span id="summary-subtotal">Rp 0</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>Total Keseluruhan</span>
+                    <span id="summary-total">Rp 0</span>
+                </div>
+                
+                <a href="checkout.html" class="checkout-button">Lanjutkan ke Pembayaran</a>
+                
+                </section>
+
+        </div>
+    </main>
+    
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/cart_logic.js"></script>
+</body>
+</html>

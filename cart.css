@@ -1,0 +1,202 @@
+/* Menggunakan variabel yang diasumsikan dari style.css */
+:root {
+    --color-primary: #4A3A2A; 
+    --color-accent: #E8B949;  
+    --color-background: #FFFFFF;
+    --color-light-bg: #F5F5F5; 
+    --color-text: #333;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+/* --- 1. CART CONTAINER & HEADING --- */
+
+.cart-container {
+    padding: 3rem 5%;
+    background-color: var(--color-light-bg);
+}
+
+.cart-container h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--color-primary);
+}
+
+/* --- 2. LAYOUT UTAMA (DAFTAR ITEM & RINGKASAN) --- */
+
+.cart-content-wrapper {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start; /* Sidebar Ringkasan tetap di atas */
+}
+
+/* Bagian Daftar Item */
+.cart-items {
+    flex: 2; /* Daftar item mengambil porsi lebih besar */
+    background-color: var(--color-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Bagian Ringkasan */
+.cart-summary {
+    flex: 1; /* Ringkasan mengambil porsi lebih kecil */
+    background-color: var(--color-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    height: fit-content; /* Sesuai konten */
+}
+
+/* --- 3. TABEL KERANJANG (ITEM) --- */
+
+#cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-body);
+}
+
+#cart-table th, #cart-table td {
+    padding: 1rem 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#cart-table th {
+    background-color: var(--color-light-bg);
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-info img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.item-quantity {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.remove-item {
+    color: #ff4d4d;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.remove-item:hover {
+    color: #cc0000;
+}
+
+/* --- 4. SUMMARY (RINGKASAN) --- */
+
+.cart-summary h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.summary-row.total-row {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    border-top: 2px solid var(--color-accent);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.checkout-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-top: 1.5rem;
+}
+
+.checkout-button:hover {
+    background-color: #d1a541;
+}
+
+/* --- 5. RESPONSIVE / MOBILE LAYOUT --- */
+
+@media (max-width: 992px) {
+    .cart-content-wrapper {
+        flex-direction: column; /* Tumpuk item dan summary di mobile */
+    }
+
+    .cart-summary {
+        width: 100%;
+    }
+
+    /* Membuat tabel lebih mudah dibaca di layar sempit */
+    #cart-table, #cart-body, #cart-table tr, #cart-table td {
+        display: block;
+    }
+
+    #cart-table thead {
+        display: none; /* Sembunyikan header tabel */
+    }
+
+    #cart-table tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    #cart-table td {
+        text-align: right;
+        border: none;
+        position: relative;
+        padding-left: 50%; /* Ruang untuk label */
+    }
+
+    #cart-table td::before {
+        content: attr(data-label); /* Menggunakan atribut data-label dari HTML */
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        text-align: left;
+        font-weight: 600;
+        color: var(--color-primary);
+    }
+    
+    .product-info {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        flex-direction: row; 
+        justify-content: flex-end; /* Memindahkan info ke kanan */
+    }
+    .product-info span {
+        text-align: left;
+    }
+}

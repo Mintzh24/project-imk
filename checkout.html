@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Selesaikan Pembelian</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="checkout.css"> </head>
+<body>
+    <header class="header header-checkout">
+        <a href="index.html" class="logo-link">
+            <img src="assets/images/logo-kopi.png" alt="Logo Kopi Nusantara" class="logo-img">
+            <span class="logo-text">Kopi Nusantara</span>
+        </a>
+        <h2 class="checkout-title">Proses Pembayaran</h2>
+    </header>
+
+    <main class="checkout-container">
+        <div class="checkout-grid">
+            
+            <section class="checkout-form">
+                <h2>1. Detail Pengiriman</h2>
+                <form id="shipping-form">
+                    
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap <span class="required">*</span></label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Nomor Telepon <span class="required">*</span></label>
+                        <input type="tel" id="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Alamat Lengkap (Jalan, Nomor Rumah) <span class="required">*</span></label>
+                        <textarea id="address" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group form-group-half">
+                        <label for="city">Kota/Kabupaten <span class="required">*</span></label>
+                        <input type="text" id="city" required>
+                    </div>
+                    
+                    <div class="form-group form-group-half">
+                        <label for="postal">Kode Pos <span class="required">*</span></label>
+                        <input type="text" id="postal" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="courier">Pilih Kurir Pengiriman <span class="required">*</span></label>
+                        <select id="courier" required>
+                            <option value="">-- Pilih Kurir --</option>
+                            <option value="JNE">JNE Reguler (Rp 25.000)</option>
+                            <option value="Tiki">Tiki ONS (Rp 35.000)</option>
+                        </select>
+                    </div>
+                    
+                </form>
+
+                <h2>2. Metode Pembayaran</h2>
+                <div class="payment-options">
+                    <label>
+                        <input type="radio" name="payment" value="bank_transfer" required> Transfer Bank (BCA/Mandiri)
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="credit_card"> Kartu Kredit/Debit
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="e_wallet"> E-Wallet (Gopay/OVO)
+                    </label>
+                </div>
+                
+                <div class="order-notes">
+                    <label for="notes">Catatan Tambahan (Opsional)</label>
+                    <textarea id="notes" rows="2"></textarea>
+                </div>
+            </section>
+            
+            <section class="order-summary">
+                <h2>3. Ringkasan Pesanan</h2>
+                <div id="order-items-list" class="order-items-list">
+                    <p>Memuat item keranjang...</p>
+                </div>
+                
+                <hr>
+                
+                <table class="summary-details">
+                    <tr>
+                        <td>Subtotal Produk:</td>
+                        <td id="subtotal-amount">Rp 0</td>
+                    </tr>
+                    <tr>
+                        <td>Ongkos Kirim:</td>
+                        <td id="shipping-amount">Rp 0</td>
+                    </tr>
+                    <tr class="summary-total">
+                        <td>Total Pembayaran:</td>
+                        <td id="total-amount">Rp 0</td>
+                    </tr>
+                </table>
+                
+                <button id="place-order-btn" class="checkout-button" disabled>Buat Pesanan dan Bayar</button>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Kopi Nusantara.</p>
+    </footer>
+
+    <script src="assets/js/checkout_logic.js"></script>
+</body>
+</html>

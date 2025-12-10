@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami - Kopi Nusantara</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="contact.css"> 
+</head>
+<body>
+<header class="header">
+        <a href="#" class="logo-link">
+            <img src="assets/images/logo-kopi.png" alt="Logo Kopi Nusantara" class="logo-img">
+            <span class="logo-text">Kopi Nusantara</span>
+        </a>
+        
+        <nav class="nav-links">
+            <a href="index.html" class="active-nav-beranda">Beranda</a>
+            <a href="belanja.html" class="active-nav-belanja">Belanja Kopi</a>
+            <a href="about.html" class="active-nav-about">Tentang Kami</a>
+            <a href="contact.html" class="active-nav-contact">Kontak</a>
+        </nav>
+        
+        <div class="nav-icons">
+            <i class="fas fa-search"></i>
+            
+            <a href="cart.html" class="cart-icon-link">
+                <div class="cart-icon-container">
+                    <i class="fas fa-shopping-cart" id="cart-icon"></i>
+                    <span class="cart-count" id="cart-count">0</span> 
+                </div>
+            </a>
+            
+            <i class="fas fa-user"></i>
+        </div>
+    </header>
+
+    <main class="contact-container">
+        <h1 class="section-title">Hubungi Kami</h1>
+        <p class="tagline">Kami siap membantu menjawab pertanyaan Anda seputar produk, pesanan, atau kolaborasi.</p>
+
+        <div class="contact-wrapper">
+            
+            <section class="contact-form">
+                <h2>Kirim Pesan</h2>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subjek</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan Anda</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button submit-btn">Kirim Pesan</button>
+                </form>
+            </section>
+
+            <aside class="contact-info">
+                <h2>Informasi Toko</h2>
+                
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Jl. Kopi Arabika No. 10, Jakarta Selatan, 12345, Indonesia</p>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>(021) 1234-5678</p>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@kopinusantara.com</p>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <p>Senin - Jumat: 08:00 - 17:00 WIB</p>
+                </div>
+                
+                <div class="map-container">
+                    
+                </div>
+            </aside>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Kopi Nusantara</div>
+            <div class="footer-links">
+                <a href="#">FAQ</a>
+                <a href="#">Kebijakan Privasi</a>
+                <a href="#">Pengiriman</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2025 Kopi Nusantara. Desain Modern Minimalis.</p>
+    </footer>
+
+    <script src="assets/js/global.js"></script>
+</body>
+</html>
